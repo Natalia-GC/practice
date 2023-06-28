@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="SlitProg" Id="{75eb691c-ab1d-43c0-bb0b-1049c83813c7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM SlitProg
+VAR_INPUT
+    mySlit : FB_SlitPair_ISIS;
+   
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*SETUP INSTRUCTIONS
+    All Axes:
+        Allow motion commands to external setpoint axis := FALSE;
+
+    Virtual axes:
+        Dynamics of virtual axes must be configured considering coupled mechanicals (e.g. don't set velocities your real axes can't achieve)
+*)
+mySlit.nIdPositiveAxis := 1;
+mySlit.nIdNegativeAxis := 2;
+mySlit.nIdGapSizeAxis := 3;
+mySlit.nIdGapCentreAxis :=4;
+mySlit();
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="SlitProg">
+      <LineId Id="10" Count="2" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="68" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

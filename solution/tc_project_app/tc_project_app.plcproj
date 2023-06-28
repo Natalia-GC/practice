@@ -26,13 +26,31 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="NC_Task_1_SAF.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Application_Specific\Applications\Application_Template.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Application_Specific\Applications\SlitProg.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Application_Specific\Axes\Axis_Template.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Application_Specific\Axes\AXIS_1.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Application_Specific\Axes\AXIS_2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Application_Specific\Axes\AXIS_3.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Application_Specific\Axes\AXIS_4.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Application_Specific\Axes\Pneumatics_Template.TcPOU">
@@ -71,6 +89,9 @@
     <Compile Include="tc_mca_std_lib\DUTs\E_AxisEngUnit.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tc_mca_std_lib\DUTs\E_AxisLimitState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\E_AxisParameters.TcTLEO">
       <SubType>Code</SubType>
     </Compile>
@@ -84,6 +105,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\E_RestorePosition.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\DUTs\E_SlitPairLimitState.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\DUTs\I_Axis.TcIO">
@@ -131,22 +155,25 @@
     <Compile Include="tc_mca_std_lib\GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tc_mca_std_lib\POUs\FB_AxisTemperature.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="tc_mca_std_lib\POUs\FB_ESSMonitoring.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\POUs\Motion\FB_Axis.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tc_mca_std_lib\POUs\Motion\FB_SlitPair.TcPOU">
+    <Compile Include="tc_mca_std_lib\POUs\Motion\FB_Axis_1.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tc_mca_std_lib\POUs\Motion\FB_SlitPairV2.TcPOU">
+    <Compile Include="tc_mca_std_lib\POUs\Motion\FB_Axis_VirtualSlit.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\POUs\Motion\FB_SlitPair_ISIS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\POUs\Motion\Homing\FB_Homing.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tc_mca_std_lib\POUs\Motion\Homing\FB_Homing_1.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tc_mca_std_lib\POUs\Pneumatics\FB_PneumaticAxis.TcPOU">

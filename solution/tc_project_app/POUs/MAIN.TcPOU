@@ -33,6 +33,7 @@ END_VAR
       <ST><![CDATA[POSITION_RECOVERY();
 PROG();
 AXES();
+
 ]]></ST>
     </Implementation>
     <Folder Name="POSITION_RECOVERY" Id="{3561f6ef-e145-4ed3-9839-f17334bd2d97}" />
@@ -114,6 +115,13 @@ GVL.fbGetCurTaskIndex();
 
 //Application program calls
 //Application_Template();
+
+AXIS_1();
+AXIS_2();
+AXIS_3();
+AXIS_4();
+
+SlitProg();
 ]]></ST>
       </Implementation>
     </Action>
@@ -289,5 +297,40 @@ END_FOR
 ]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="MAIN">
+      <LineId Id="3" Count="2" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.AXES">
+      <LineId Id="2" Count="20" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.CHECK_UPS">
+      <LineId Id="2" Count="22" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.POSITION_RECOVERY">
+      <LineId Id="2" Count="4" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.PROG">
+      <LineId Id="2" Count="11" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.RESTORE_POSITIONS">
+      <LineId Id="2" Count="147" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.STORE_PERSISTENT">
+      <LineId Id="2" Count="13" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
