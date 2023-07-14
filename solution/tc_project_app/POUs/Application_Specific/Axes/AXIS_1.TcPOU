@@ -12,30 +12,31 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Initial parameters of an Axis
-(*IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
+IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
     //Axis description for EPICS PV
-    GVL.astAxes[1].stDescription.sAxisName := 'MotorApplication1';
-    GVL.astAxes[1].stDescription.eUnit := E_AxisEngUnit.eMeter;
-    GVL.astAxes[1].stDescription.nPrefix := -3;
+    //GVL.astAxes[1].stDescription.sAxisName := 'MotorApplication1';
+    //GVL.astAxes[1].stDescription.eUnit := E_AxisEngUnit.eMeter;
+    //GVL.astAxes[1].stDescription.nPrefix := -3;
 
     //Initial default values:
-    GVL.astAxes[1].stConfig.eHomeSeq := 0;
+    GVL.astAxes[1].stConfig.eHomeSeq := E_HomingRoutines.eNoHoming;
     GVL.astAxes[1].stConfig.fHomePosition := 0.0;
     GVL.astAxes[1].stConfig.fHomeFinishDistance := 0.0;
     GVL.astAxes[1].stConfig.eRestorePosition := E_RestorePosition.eRestoreWithoutHome;
-END_IF*)
+END_IF
 
 //Define ACTIONS() or write exclusive code for an specific axis.
 (*Eg. Stop when temperature reaches certain values, reduce speed if  a signal is activated, etc.
 Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 
 //Limits for positive axis, Axis 1
-IF astAxes[1].stStatus.fActPosition > 100 THEN
+IF astAxes[1].stStatus.fActPosition > 50 THEN
     SlitProg.mySlit.bPositiveAxis_FwdLimit := FALSE;
+    
 ELSE
      SlitProg.mySlit.bPositiveAxis_FwdLimit :=TRUE;
 END_IF
-IF astAxes[1].stStatus.fActPosition < -100 THEN
+IF astAxes[1].stStatus.fActPosition <  -10 THEN
      SlitProg.mySlit.bPositiveAxis_BwdLimit :=FALSE;
 ELSE
      SlitProg.mySlit.bPositiveAxis_BwdLimit :=TRUE;
@@ -49,6 +50,7 @@ END_IF
       <LineId Id="53" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="57" Count="0" />
+      <LineId Id="67" Count="0" />
       <LineId Id="30" Count="2" />
       <LineId Id="42" Count="0" />
       <LineId Id="44" Count="2" />

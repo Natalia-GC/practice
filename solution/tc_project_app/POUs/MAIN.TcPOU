@@ -23,6 +23,9 @@ VAR
     afbReadPositionBias: ARRAY [1..GVL_APP.nAXIS_NUM] OF MC_ReadParameter;
     afbWritePositionBias: ARRAY [1..GVL_APP.nAXIS_NUM] OF MC_WriteParameter;
     fbGetDeviceIdentification: FB_GetDeviceIdentificationEx;
+    
+    gapSizeAxis : FB_Axis_VirtualSlit;
+    gapCentreAxis : FB_Axis_VirtualSlit;
 END_VAR
 
 VAR PERSISTENT
@@ -49,6 +52,10 @@ IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
       //FB_CustomAxis extends FB_axis
         //fbCustomAxis.stAxis REF= astAxes[x];
         //aIAxes[x] := fbCustomAxis;
+        gapSizeAxis.stAxis REF= astAxes[3];
+        gapCentreAxis.stAxis REF= astAxes[4];
+        aIAxes[3] := gapSizeAxis;
+        aIAxes[4] := gapCentreAxis;
 END_IF
 
 //Execute FB_Axis logic
@@ -120,7 +127,6 @@ AXIS_1();
 AXIS_2();
 AXIS_3();
 AXIS_4();
-
 SlitProg();
 ]]></ST>
       </Implementation>
@@ -303,7 +309,9 @@ END_FOR
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.AXES">
-      <LineId Id="2" Count="20" />
+      <LineId Id="2" Count="9" />
+      <LineId Id="23" Count="3" />
+      <LineId Id="12" Count="10" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.CHECK_UPS">
@@ -320,7 +328,6 @@ END_FOR
       <LineId Id="14" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="20" Count="1" />
-      <LineId Id="17" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>

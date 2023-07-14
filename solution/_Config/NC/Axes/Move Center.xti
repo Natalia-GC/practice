@@ -1409,6 +1409,7 @@ External Setpoint Generation:
 	<Axis Id="4" CreateSymbols="true" AxisType="1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
+			<TargetPosControl Range="0.02"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="16">

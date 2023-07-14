@@ -4,7 +4,7 @@
     <Declaration><![CDATA[PROGRAM SlitProg
 VAR_INPUT
     mySlit : FB_SlitPair_ISIS;
-   
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -19,7 +19,9 @@ mySlit.nIdPositiveAxis := 1;
 mySlit.nIdNegativeAxis := 2;
 mySlit.nIdGapSizeAxis := 3;
 mySlit.nIdGapCentreAxis :=4;
+mySlit.bEnable := TRUE;
 mySlit();
+
 
 ]]></ST>
     </Implementation>
@@ -32,7 +34,9 @@ mySlit();
       <LineId Id="69" Count="0" />
       <LineId Id="71" Count="0" />
       <LineId Id="73" Count="0" />
+      <LineId Id="81" Count="0" />
       <LineId Id="75" Count="0" />
+      <LineId Id="90" Count="0" />
       <LineId Id="70" Count="0" />
       <LineId Id="68" Count="0" />
     </LineIds>

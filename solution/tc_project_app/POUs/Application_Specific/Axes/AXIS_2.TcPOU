@@ -30,12 +30,12 @@ END_IF*)
 Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 
 //Limits for negative axis, Axis 2
-IF astAxes[2].stStatus.fActPosition > 100 THEN
+IF astAxes[2].stStatus.fActPosition > 10 THEN
     SlitProg.mySlit.bNegativeAxis_FwdLimit := FALSE;
 ELSE
      SlitProg.mySlit.bNegativeAxis_FwdLimit :=TRUE;
 END_IF
-IF astAxes[2].stStatus.fActPosition < -100 THEN
+IF astAxes[2].stStatus.fActPosition < -50 THEN
      SlitProg.mySlit.bNegativeAxis_BwdLimit :=FALSE;
 ELSE
      SlitProg.mySlit.bNegativeAxis_BwdLimit :=TRUE;
