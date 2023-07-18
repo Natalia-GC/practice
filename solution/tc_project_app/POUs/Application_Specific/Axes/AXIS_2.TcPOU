@@ -32,7 +32,7 @@ Eg. GVL.astAxes[x].stControl.bInterlockFwd := NOT bInterlockFwdOK;*)
 //Limits for negative axis, Axis 2
 
 //code for normal polarity limits
-(*
+
 IF astAxes[2].stStatus.fActPosition > 10 THEN
     SlitProg.mySlit.bNegativeAxis_FwdLimit := FALSE;
 ELSE
@@ -43,20 +43,24 @@ IF astAxes[2].stStatus.fActPosition < -50 THEN
 ELSE
      SlitProg.mySlit.bNegativeAxis_BwdLimit :=TRUE;
 END_IF
-*)
 
 
+(*
  //NOT NORMAL POLARITY
 IF astAxes[2].stStatus.fActPosition > 10 THEN
-    SlitProg.mySlit.bNegativeAxis_FwdLimit := FALSE;
-ELSE
-     SlitProg.mySlit.bNegativeAxis_FwdLimit :=TRUE;
-END_IF
-IF astAxes[2].stStatus.fActPosition < -50 THEN
-     SlitProg.mySlit.bNegativeAxis_BwdLimit :=FALSE;
+    SlitProg.mySlit.bNegativeAxis_BwdLimit := FALSE;
 ELSE
      SlitProg.mySlit.bNegativeAxis_BwdLimit :=TRUE;
 END_IF
+
+IF astAxes[2].stStatus.fActPosition < -50 THEN
+     SlitProg.mySlit.bNegativeAxis_FwdLimit :=FALSE;
+ELSE
+     SlitProg.mySlit.bNegativeAxis_FwdLimit :=TRUE;
+END_IF
+*)
+//SlitProg.mySlit.bNegativeAxis_BwdLimit := TRUE;
+//SlitProg.mySlit.bNegativeAxis_FwdLimit := TRUE;
 ]]></ST>
     </Implementation>
     <LineIds Name="AXIS_2">
@@ -69,8 +73,11 @@ END_IF
       <LineId Id="2" Count="0" />
       <LineId Id="83" Count="1" />
       <LineId Id="70" Count="0" />
-      <LineId Id="72" Count="9" />
+      <LineId Id="72" Count="5" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="78" Count="3" />
       <LineId Id="71" Count="0" />
+      <LineId Id="86" Count="2" />
       <LineId Id="82" Count="0" />
     </LineIds>
   </POU>
